@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>SpaceX upcoming launches</title>
+</head>
+<body>
+
+<h1 th:style="'text-align: center; font-weight: bold'">SpaceX upcoming launches</h1>
+<br>
+<br>
+
+<table class="pure-table">
+    <thead>
+    <tr class="headings">
+        <th class="column-title" >Flight number</th>
+        <th class="column-title" >Mission name</th>
+        <th class="column-title" >Launch Date</th>
+        <th class="column-title" >Rocket</th>
+        <th class="column-title" >Ships</th>
+    </tr>
+    </thead>
+    <tr class="even pointer" th:each="launch: ${lauchesUpcomingList}" id="tablerow">
+        <td> <p th:text="${launch.getFlightNumber()}"></p></td>
+        <td ><p th:text="${launch.getMissionName()}"></p></td>
+        <td ><p th:text="${launch.getLaunchDateUtc()}"></p></td>
+        <td ><p th:text="${launch.getRocket()}"></p></td>
+        <td ><p th:text="${launch.getShips()}"></p></td>
+    </tr>
+
+    <tbody>
+
+    </tbody>
+</table>
+
+</body>
+</html>

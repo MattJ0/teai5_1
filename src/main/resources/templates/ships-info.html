@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>SpaceX ships info</title>
+</head>
+<body>
+
+<h1 th:style="'text-align: center; font-weight: bold'">SpaceX ships info</h1>
+<br>
+<br>
+
+<table class="pure-table">
+    <thead>
+    <tr class="headings">
+        <th class="column-title" >ID</th>
+        <th class="column-title" >Name</th>
+        <th class="column-title" >Model</th>
+        <th class="column-title" >Type</th>
+        <th class="column-title" >Roles</th>
+        <th class="column-title" >Missions</th>
+    </tr>
+    </thead>
+    <tr class="even pointer" th:each="ship: ${ships}" id="tablerow">
+        <td> <p th:text="${ship.getShipId()}"></p></td>
+        <td ><p th:text="${ship.getShipName()}"></p></td>
+        <td ><p th:text="${ship.getShipModel()}"></p></td>
+        <td ><p th:text="${ship.getShipType()}"></p></td>
+        <td ><p th:text="${ship.getRoles()}"></p></td>
+        <td ><p th:text="${ship.getMissions()}"></p></td>
+    </tr>
+
+    <tbody>
+
+    </tbody>
+</table>
+
+</body>
+</html>
