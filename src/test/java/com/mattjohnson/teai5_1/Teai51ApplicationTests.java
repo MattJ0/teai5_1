@@ -1,5 +1,6 @@
 package com.mattjohnson.teai5_1;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,4 +11,8 @@ class Teai51ApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void simpleTest() {
+        Assertions.assertTrue(true);
+    }
 }
